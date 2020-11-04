@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="0ph-SW-zHX">
             <objects>
-                <viewController id="hXy-Gb-vAL" customClass="LoginViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hXy-Gb-vAL" customClass="LoginViewController" customModule="TwitterClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hSk-dG-AdH">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,24 +51,21 @@
         <!--Home-->
         <scene sceneID="TIV-fS-6Qc">
             <objects>
-                <tableViewController id="qaE-3G-dv8" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r6r-yY-39X">
+                <tableViewController id="qaE-3G-dv8" customClass="HomeTableViewController" customModule="TwitterClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" id="r6r-yY-39X">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="136" id="O1o-ov-FfK" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="390" height="136"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="120" id="O1o-ov-FfK" customClass="TweetCellTableViewCell" customModule="TwitterClone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="390" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O1o-ov-FfK" id="58r-dG-Z4M">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="136"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnQ-dY-2QX">
-                                            <rect key="frame" x="20" y="11" width="65" height="65"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Taylor Swift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TR-Ne-kF8">
-                                            <rect key="frame" x="93" y="11" width="85" height="18"/>
+                                            <rect key="frame" x="93" y="11" width="277" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                             <nil key="textColor"/>
@@ -81,11 +78,12 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnQ-dY-2QX">
+                                            <rect key="frame" x="0.0" y="25" width="70" height="70"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="mnQ-dY-2QX" firstAttribute="top" secondItem="58r-dG-Z4M" secondAttribute="top" id="bXU-Q5-8BJ"/>
-                                        <constraint firstItem="mnQ-dY-2QX" firstAttribute="leading" secondItem="58r-dG-Z4M" secondAttribute="leading" id="s6s-Vd-uwx"/>
-                                    </constraints>
+                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="profileImageView" destination="mnQ-dY-2QX" id="ka1-BO-MiB"/>
@@ -139,6 +137,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

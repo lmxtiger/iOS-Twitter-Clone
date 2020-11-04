@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Twitter.xcodeproj">
+      location = "group:/Users/stevenliu/Documents/iOS course Apps/twitter_ios_starter/TwitterClone.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
