@@ -17,16 +17,26 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTweets()
+        self.loadTweets()
         
         // Load new tweets when pulled down
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
+        // Customize the table cell/row size
+//        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = 180
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    // Unlike viewDidLoad, viewDidAppear gets called every time this page appears
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadTweets()
     }
 
     // MARK: - Table view data source
@@ -99,6 +109,12 @@ class HomeTableViewController: UITableViewController {
         if let imageData = data {
             cell.profileImageView.image = UIImage(data: imageData)
         }
+        
+        // Display tweet as favorited (red) if it's already been favorited by the user
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+//        cell.favorited = tweetArray[indexPath.row]["favorited"] as! Bool
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
         return cell
     }
     
@@ -112,6 +128,7 @@ class HomeTableViewController: UITableViewController {
         return tweetArray.count
     }
 
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
